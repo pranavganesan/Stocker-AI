@@ -40,7 +40,7 @@ def get_historical_stock_price(ticker: str, start_date: str, end_date: str):
 def get_balance_sheet(ticker: str):
     print('get_balance_sheet tool is being used')
     stock = yf.Ticker(ticker)
-    return stock.balance_sheet
+    return stock.balance_sheet.to_dict()
 
 @tool('get_news', description="Get the latest news for a given ticker symbol.")
 def get_news(ticker: str):
